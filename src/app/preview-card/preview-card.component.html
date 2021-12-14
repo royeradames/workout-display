@@ -1,12 +1,12 @@
-<article class="card">
-  <img class="card-image" src={{workoutList[0].image}} alt={{workoutList[0].inst}} />
-  <h2 class="card-title">{{workoutList[0].name}}</h2>
+<article class="card" *ngFor="let workout of workoutList;">
+  <img class="card-image" [src]="workout.image" [alt]="workout.inst" />
+  <h2 class="card-title">{{workout.name}}</h2>
   <p class="card-description">{{workoutList[3].desc}}</p>
-  <p class="card-level">{{workoutList[0].level}}</p>
-  <p class="card-length">{{workoutList[0].len}}</p>
+  <p class="card-level">{{workout.level}}</p>
+  <p class="card-length">{{workout.len}}</p>
   <hr class="card-line" />
-  <p class="card-product"> {{workoutList[0].product}}</p>
-  <p class="card-instructor"><span class="card-instructor-title">Instructor</span> {{workoutList[0].inst}}</p>
-  <p class="card-category">{{workoutList[0].cat}}</p>
+  <p class="card-product"> {{workout.product}}</p>
+  <p class="card-instructor"><span class="card-instructor-title">Instructor</span> {{workout.inst}}</p>
+  <p class="card-category">{{workout.cat}}</p>
   <p></p>
 </article>
