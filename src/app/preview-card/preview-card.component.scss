@@ -1,0 +1,109 @@
+@import "../../sass/variables";
+.card {
+  /* style card parent */
+  // contract card from background
+  background-color: $very-dark-blue-card;
+  // move content away from border
+  padding: 2.4rem;
+  // round off the coners
+  border-radius: 1.5rem;
+  // keep card small
+  max-width: 36rem;
+
+  /* define a layout */
+  display: grid;
+  grid-template:
+    "image image"
+    ". ." 2.4rem
+    "title title" max-content
+    ". ." 1.6rem
+    "product product"
+    ". ." 1.6rem
+    "description description"
+    ". ." 2.4rem
+    "level length"
+    ". ." 2.4rem
+    "line line"
+    ". ." 2.4rem
+    "instructor category"
+    / 1fr 1fr;
+
+  /* move elements to the layout */
+  &-image {
+    grid-area: image;
+
+    // round image coners
+    border-radius: 0.8rem;
+  }
+  &-title {
+    grid-area: title;
+    text-transform: uppercase;
+  }
+  &-description {
+    grid-area: description;
+
+    // define text
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    color: $soft-blue;
+  }
+  &-level {
+    grid-area: level;
+
+    // make text standout
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: $cyan;
+    text-transform: uppercase;
+  }
+  &-length {
+    grid-area: length;
+
+    // make text standout
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: $soft-blue;
+    text-align: right;
+  }
+  &-line {
+    grid-area: line;
+    border: solid 0.1rem $very-dark-blue-line;
+    // make line full width
+    width: 100%;
+  }
+  &-product {
+    grid-area: product;
+
+    // define text
+    text-transform: capitalize;
+    color: $cyan;
+    font-weight: 400;
+    font-size: 1.6rem;
+  }
+  &-instructor {
+    grid-area: instructor;
+
+    // define text
+    font-weight: 400;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    color: $white;
+    &-title {
+      margin-bottom: 0.5rem;
+      color: $soft-blue;
+      // have title in its own line
+      display: block;
+    }
+  }
+  &-category {
+    grid-area: category;
+
+    // define text
+    text-align: right;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: $soft-blue;
+    align-self: end;
+  }
+}
