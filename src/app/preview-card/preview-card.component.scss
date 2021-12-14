@@ -71,6 +71,8 @@
     border: solid 0.1rem $very-dark-blue-line;
     // make line full width
     width: 100%;
+    // fix line height
+    max-height: 0.1rem;
   }
   &-product {
     grid-area: product;
