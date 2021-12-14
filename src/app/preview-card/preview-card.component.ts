@@ -2,13 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 export type Workout = {
-  id: string;
+  id: number;
   name: string;
+  desc: string;
   image: string;
+  cat: string;
+  inst: string;
   len: string;
   level: string;
   product: string;
-  updatedAt: string;
 };
 @Component({
   selector: 'app-preview-card',
@@ -18,6 +20,18 @@ export type Workout = {
 export class PreviewCardComponent implements OnInit {
   /* get workouts from server */
   workoutList: Workout[] = [];
+  workout: Workout = {
+    id: 1,
+    name: '',
+    desc: '',
+    image: '',
+    cat: '',
+    inst: '',
+    len: '',
+    level: '',
+    product: '',
+  };
+
   constructor(private http: HttpClient) {}
   ngOnInit(): void {
     this.getWorkoutList();
